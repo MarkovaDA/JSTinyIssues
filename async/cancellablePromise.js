@@ -1,4 +1,4 @@
-// https://github.com/darya-markova?tab=repositories
+// https://github.com/MarkovaDA/JSTinyIssues
 class CancellablePromise {
   constructor(executor) {
     this._isCancelled = false;
@@ -29,6 +29,7 @@ class CancellablePromise {
   }
 }
 
+// эта функция пишется в прототип или как ?
 CancellablePromise.create = function(executor) {
   const cancellable = new CancellablePromise(executor);
   return cancellable;
@@ -51,6 +52,7 @@ setTimeout(() => {
   cancellablePromise.cancel();
   console.log(cancellablePromise)
 }, 2000);
+
 
 /* const cancellablePromise = new CancellablePromise((resolve, reject) => {
   const timer = setTimeout(() => {
